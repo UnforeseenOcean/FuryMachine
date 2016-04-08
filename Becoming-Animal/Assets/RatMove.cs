@@ -29,8 +29,13 @@ public class RatMove : MonoBehaviour {
 		Vector3 currentPos = transform.position;
 		if (Vector3.Distance (currentPos, oldPos) < 0.1f) {
 			Debug.Log ("nice");
+            speed = 10f;
 			transform.eulerAngles = new Vector3 (0f, transform.eulerAngles.y+180f, 0f);
-		} 
+		}
+        else if(speed <20f)
+        {
+            speed+=0.1f; 
+        } 
 		oldPos = currentPos;
 	}
 }
