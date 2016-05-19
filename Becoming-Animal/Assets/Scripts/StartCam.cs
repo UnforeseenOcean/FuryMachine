@@ -19,7 +19,7 @@ public class StartCam : MonoBehaviour {
 	void Update () {
 
 		if (!startGame)
-			startText.text = "LOOK HERE FOR \n" + Mathf.CeilToInt (lookTimer).ToString () + "\n TO \n START GAME";
+			startText.text = "LOOK HERE FOR \n" + Mathf.CeilToInt (lookTimer).ToString () + " SECONDS \n TO \n START GAME";
 		else {
 			StartCoroutine ("StartGame");
 		}

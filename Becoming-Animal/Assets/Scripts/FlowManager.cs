@@ -26,15 +26,12 @@ public class FlowManager : MonoBehaviour {
 		switch (state) {
 
 		case 1:
-			if (timer > 0.25f && timer < 0.5f) {
-				ratText.enabled = false;
-			} else if (timer > 0.5f) {
-				timer = 0f;
-				flashCount++;
-			} else
+			if (timer < 3f)
 				ratText.enabled = true;
-			if (flashCount > 5)
-				state++;
+			else {
+				ratText.enabled = false;
+				state = 2;
+			}
 			break;
 		case 2:
 			ratText.gameObject.SetActive (false);
@@ -43,7 +40,7 @@ public class FlowManager : MonoBehaviour {
 			}
 			break;
 		case 3:
-			SceneManager.LoadSceneAsync (nextScene);
+			SceneManager.LoadScene (nextScene);
 			break;
 		}
 

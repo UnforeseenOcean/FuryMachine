@@ -18,6 +18,14 @@ public class WebcamScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		GetComponent<Renderer>().material.mainTexture = webcamTexture;
+		webcamTexture.Play();
+		rawImg.GetComponent<RawImage> ().texture = GetComponent<Renderer> ().material.mainTexture;
 
+	}
+
+	void OnDestroy()
+	{
+		webcamTexture.Stop ();
 	}
 }
