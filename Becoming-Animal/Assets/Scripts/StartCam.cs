@@ -34,7 +34,7 @@ public class StartCam : MonoBehaviour {
 		if ( Physics.Raycast( ray, out rayHitInfo, 1000f ) 
 			&& rayHitInfo.transform == quadTransform ) {
 			// is the raycast hitting the thing we put this script on?
-			Debug.Log("LOOKING");
+			//Debug.Log("LOOKING");
 			OnLooking();
 			if ( wasLooking == false ) {
 				wasLooking = true;
